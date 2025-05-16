@@ -15,12 +15,16 @@ The statistics that I used all came from [Baseball Savant](https://baseballsavan
 
 ### Formula for power
 To calculate who was swinging for the fences the most, I used the formula:
-- K% + BB% + HH% + Whiff% - OZS%
+
+> K% + BB% + HH% + Whiff% - OZS%
+
 A true power hitter is going to end up swinging and missing more in order to swing harder, which is why I used K% and Whiff%. However, they are also going to be more selective with the pitches that they swing at, so they should be walking at a higher rate and swinging less at pitches outside of the zone. Lastly, you can't be a power hitter if you don't hit the ball hard. The formula adds together the percentages that should be higher, and it subtracts the percentage of outside of the zone swings, which should be lower. The output is a player's power rating, and the higher your rating, the more it seems you are swinging for the fences.
 
 ### Formula for contact
 Now, to calculate who was simply trying to put the ball in play the most, I used the formula:
-- (IZS% - OZS%) + (IZC% - OZC%) + BB% + K% + Whiff%
+
+> (IZS% - OZS%) + (IZC% - OZC%) + BB% + K% + Whiff%
+
 Contact hitters are guys that swing at anything near the zone and don't try to do too much with it. So, I took the rate at which they swung at putches in the zone and subtracted the rate at which they swung at pitches outside of the zone. This is to show how much they are swinging at everything. The narrower the margin between IZS% and OZS% shows that they will swing at anything. However, to ensure that they aren't just free-swingers, I also took the difference between IZC% and OZC% to ensure there was minimal fall-off between contact being made on the decision to swing outside of the zone. Because of the rate at which they swing, they are also going to walk less, so I added BB%. Lastly, the one thing contact guys absolutely cannot do is swing and miss or strikeout, which is why I added those in there as well. The formula is meant to find the player with the lowest sum of these percentages to show just how devoted they are to putting the ball in play.
 
 ## How I implemented the formula
